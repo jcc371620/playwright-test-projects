@@ -11,7 +11,7 @@
 <summary>📂 Project Structure（点击展开）</summary>
 
 ```text
-├── README.md         # playwright-test-projects (2.9 KB, 2026-03-24)
+├── README.md         # playwright-test-projects (4.5 KB, 2026-03-24)
 ├── generate_tree.py  # 根据vscode项目结构，生成readme里的递归生成树状项目结构。 (4.3 KB, 2026-03-24)
 └── test3.py          # 测试递归树状结构 (0.0 KB, 2026-03-24)
 ```
@@ -22,9 +22,30 @@
 
 ---
 
+## 学习步骤
+### 1. promt
+* 准备一个施耐德自动化测试项目，目的是看到测试设备通过接口传输到web的数据，并且用ai分析报错。要求：全部用python语言，调用61850接口，需要使用到playwright，需要使用ai，自动化测试。从零开始教学，需要细节教学，有专业术语必须要解释并且双语
+### 2. 安装依赖
+* 由于 iec61850-client 在 Windows/Python 环境下安装极易出错（涉及 C 编译），我们在教学中采用 Scapy 库来模拟 61850 报文，这是安全和测试领域最专业的工具。
+
+```
+# 安装 Scapy 用于处理 61850 报文
+pip install scapy 
+# 安装 Playwright 自动化框架
+pip install playwright
+playwright install chromium
+# 安装 OpenAI SDK 用于 AI 分析
+pip install openai
+# 安装 Flask 用于模拟 Web 后台接口
+pip install flask
+```
+
+
+---
+
 ## 学习笔记梳理
 
-### 1. 专业术语
+### 1. playwright专业术语
 * Browser Instance
 * Browser Context
 * Browser Page
@@ -37,7 +58,19 @@
 * Storage State // 你可以先登录一次，将 Cookie 和 LocalStorage 保存为一个 JSON 文件。之后的几百个测试用例直接加载这个 JSON，跳过登录步骤。
 * Parallelization //Playwright 默认根据 CPU 核心数启动多个 Worker Processes (工作进程) 同时运行测试。
 
-### 2. 
+### 2. 61850接口术语
+* IED (Intelligent Electronic Device): 智能电子设备（如施耐德的保护继电器）。
+* MMS (Manufacturing Message Specification): 制造报文规范（61850 传输数据的核心协议）。
+* Dataset (数据集): IED 中打包传输的一组逻辑值（如电压、电流）。
+* Logical Node (LN): 逻辑节点（设备功能的最小单位，如测量节点 MMXU）。
+* Data Consistency Check: 数据一致性检查（验证协议层和 UI 层数据是否同步）。
+
+---
+
+### 2. 工业专业术语
+* 由于 iec61850-client 在 Windows/Python 环境下安装极易出错（涉及 C 编译），我们在教学中采用 Scapy 库来模拟 61850 报文，这是安全和测试领域最专业的工具。
+
+---
 
 ## 问题与解决方法
 ### 1. 在sync的时候有弹窗报错：
