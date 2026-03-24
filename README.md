@@ -39,21 +39,34 @@
 全部用python语言。
 必须调用61850接口，必须需要使用到playwright，必须能肉眼看到页面交互。
 告诉我详细的建立文件的步骤，项目结构，代码里的注释尽可能详细，最好每一个行为都要有注释，比如用了fixture就注释说一下为什么用。从零开始细节教学，如果有专业术语必须要解释并且双语。文件夹根目录为playwright-test-projects
-### 2. 安装依赖
+
+### 2. 激活虚拟环境
+* python3 -m venv venv //这条命令会在文件夹里生成一个名为 venv 的文件夹，存放这个项目专用的 Python。
+* source venv/bin/activate // 行完这个，你会发现终端提示符前面多了个 (venv) 字样，说明你已经进入了“样板间”。
+
+### 3. 安装依赖
 * 由于 iec61850-client 在 Windows/Python 环境下安装极易出错（涉及 C 编译），我们在教学中采用 Scapy 库来模拟 61850 报文，这是安全和测试领域最专业的工具。
 
 ```
 # 安装 Scapy 用于处理 61850 报文
 pip install scapy 
+
 # 安装 Playwright 自动化框架
 pip install playwright
 playwright install chromium
+
 # 安装 OpenAI SDK 用于 AI 分析
 pip install openai
+
 # 安装 Flask 用于模拟 Web 后台接口
 pip install flask
 ```
+``` 
+pip install scapy playwright pytest pytest-playwright python-dotenv openai
 
+# playwright install chromium
+pyminimms 是一个常用的 Python 61850/MMS 库；openai 用于 AI 分析。
+```
 
 ---
 
