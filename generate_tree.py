@@ -1,43 +1,78 @@
-#根据vscode项目结构，生成readme里的递归生成树状项目结构。
-
-# Promt: 根据vscode项目结构，生成readme里的递归生成树状项目结构。要求显示所有文件夹和文件的注释（比如我把注释写在每个文件的第一行）信息（大小 + 修改时间）。如果项目结构变了，树状图可以相应改变。 格式：文件名 #注释（文件大小，最后修改日期） 注意每一行要对齐
+# 每次 git commit 自动更新 README.
+# 根据vscode项目结构，生成readme里的递归生成树状项目结构。要求显示所有文件夹和文件的注释（比如我把注释写在每个文件的第一行）信息（大小 + 修改时间）。如果项目结构变了，树状图可以相应改变。 格式：文件名 #注释（文件大小，最后修改日期）每一行要对齐
 
 import os
 import datetime
 import re
+import subprocess
+import sys
 
-ROOT_DIR = "."
-OUTPUT_FILE = "README.md"
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_FILE = os.path.join(ROOT_DIR, "README.md")
 
-IGNORE = {".git", "__pycache__", "node_modules", ".idea", ".vscode"}
+DEFAULT_IGNORE = {".git", "__pycache__", "node_modules", ".idea", ".vscode"}
 
-# 获取文件大小 + 修改时间
-def get_file_info(path):
-    size = os.path.getsize(path)
-    mtime = datetime.datetime.fromtimestamp(os.path.getmtime(path))
-    return f"{size/1024:.1f} KB", mtime.strftime("%Y-%m-%d")
+# =========================
+# 读取 .gitignore
+# =========================
+def load_gitignore():
+    ignore = set(DEFAULT_IGNORE)
+    gitignore_path = os.path.join(ROOT_DIR, ".gitignore")
 
-# 获取文件第一行注释
-def get_file_comment(path):
-    try:
-        with open(path, "r", encoding="utf-8") as f:
+    if os.path.exists(gitignore_path):
+        with open(gitignore_path, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
-                if line.startswith(("#", "//", "/*", '"""', "'''")):
+                if line and not line.startswith("#"):
+                    ignore.add(line.split("/")[0])
+    return ignore
+
+IGNORE = load_gitignore()
+
+# =========================
+# 文件信息
+# =========================
+def get_file_info(path):
+    try:
+        size = os.path.getsize(path)
+        mtime = datetime.datetime.fromtimestamp(os.path.getmtime(path))
+        return f"{size/1024:.1f} KB", mtime.strftime("%Y-%m-%d")
+    except:
+        return "?", "?"
+
+# =========================
+# 文件注释
+# =========================
+def get_file_comment(path):
+    try:
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            for _ in range(5):  # 只看前5行，更稳
+                line = f.readline()
+                if not line:
+                    break
+                line = line.strip()
+
+                if line.startswith(("#", "//")):
                     return line.lstrip("#/ ").strip()
-                if line:  # 第一行不是注释就结束
+
+                if line.startswith(("/*", '"""', "'''")):
+                    return line.strip("/*\"' ")
+
+                if line:
                     break
     except:
         pass
     return ""
 
-# 获取目录注释
+# =========================
+# 目录注释
+# =========================
 def get_dir_comment(path):
     for name in [".dircomment", "README.md"]:
         file_path = os.path.join(path, name)
         if os.path.exists(file_path):
             try:
-                with open(file_path, "r", encoding="utf-8") as f:
+                with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
                     for line in f:
                         line = line.strip()
                         if line:
@@ -46,10 +81,18 @@ def get_dir_comment(path):
                 pass
     return ""
 
-# 收集当前层（用于对齐）
+# =========================
+# 收集文件
+# =========================
 def collect_items(root):
     items = []
-    for name in sorted(os.listdir(root)):
+
+    try:
+        names = sorted(os.listdir(root))
+    except:
+        return items
+
+    for name in names:
         if name in IGNORE:
             continue
 
@@ -73,9 +116,12 @@ def collect_items(root):
                 "is_dir": False,
                 "path": path
             })
+
     return items
 
-# 构建树（核心：对齐）
+# =========================
+# 构建树
+# =========================
 def build_tree(root, prefix=""):
     tree = ""
     items = collect_items(root)
@@ -83,16 +129,11 @@ def build_tree(root, prefix=""):
     if not items:
         return tree
 
-    # 计算最大文件名长度（用于对齐）
     max_len = max(len(item["name"]) for item in items)
 
     for i, item in enumerate(items):
         connector = "└── " if i == len(items) - 1 else "├── "
-
-        # 文件名填充空格（关键！）
         name_padded = item["name"].ljust(max_len)
-
-        # 至少留2个空格再接 #
         base = f"{prefix}{connector}{name_padded}  "
 
         if item["comment"]:
@@ -102,14 +143,15 @@ def build_tree(root, prefix=""):
 
         tree += line + "\n"
 
-        # 递归子目录
         if item["is_dir"]:
             extension = "    " if i == len(items) - 1 else "│   "
             tree += build_tree(item["path"], prefix + extension)
 
     return tree
 
-# 写入 README
+# =========================
+# 写 README
+# =========================
 def update_readme(tree_text):
     start = "<!-- TREE_START -->"
     end = "<!-- TREE_END -->"
@@ -131,7 +173,6 @@ def update_readme(tree_text):
 {end}
 """
 
-    import re
     if start in content and end in content:
         content = re.sub(f"{start}.*?{end}", new_block, content, flags=re.S)
     else:
@@ -140,6 +181,45 @@ def update_readme(tree_text):
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
 
+# =========================
+# 安装 Git Hook（关键升级点）
+# =========================
+def install_hook():
+    git_dir = os.path.join(ROOT_DIR, ".git")
+    if not os.path.exists(git_dir):
+        print("❌ 当前目录不是 git 仓库")
+        return
+
+    hook_path = os.path.join(git_dir, "hooks", "pre-commit")
+
+    python_cmd = "python"
+    if sys.platform != "win32":
+        python_cmd = "python3"
+
+    script_name = os.path.basename(__file__)
+
+    hook_content = f"""#!/bin/bash
+echo "🔄 Updating README tree..."
+{python_cmd} {script_name}
+git add README.md
+"""
+
+    with open(hook_path, "w", encoding="utf-8") as f:
+        f.write(hook_content)
+
+    if sys.platform != "win32":
+        os.chmod(hook_path, 0o755)
+
+    print("✅ Git hook installed!")
+
+# =========================
+# 主入口
+# =========================
 if __name__ == "__main__":
+    if "--install" in sys.argv:
+        install_hook()
+        sys.exit(0)
+
     tree = build_tree(ROOT_DIR)
     update_readme(tree)
+    print("✅ README updated!")
