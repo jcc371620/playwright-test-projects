@@ -1,0 +1,34 @@
+// 这是一个模拟的变电站（Substation）监控界面。
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schneider Electric - Substation Monitor</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #222; color: #00ff00; text-align: center; }
+        .panel { border: 2px solid #444; display: inline-block; padding: 20px; margin-top: 50px; border-radius: 10px; }
+        .value-box { font-size: 48px; font-weight: bold; color: #fff; }
+        .status { color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>Schneider Substation Control Center</h1>
+    <div class="panel">
+        <h3>Bay 01 - Current Phase A (电流 A 相)</h3>
+        <div id="current-display" class="value-box">Loading...</div>
+        <div class="status">Protocol: IEC 61850 MMS</div>
+    </div>
+
+    <script>
+        // 模拟前端定时从接口获取数据 (Polling)
+        function updateData() {
+            fetch('/api/v1/live-data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('current-display').innerText = data.voltage_phsA + " A";
+                });
+        }
+        setInterval(updateData, 2000); // 每2秒刷新一次
+        updateData();
+    </script>
+</body>
+</html>

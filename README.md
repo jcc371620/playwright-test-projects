@@ -11,20 +11,30 @@
 <summary>📂 Project Structure（点击展开）</summary>
 
 ```text
-├── README.md         # playwright-test-projects (4.5 KB, 2026-03-24)
+├── README.md         # playwright-test-projects (4.7 KB, 2026-03-24)
 ├── generate_tree.py  # 根据vscode项目结构，生成readme里的递归生成树状项目结构。 (4.3 KB, 2026-03-24)
-└── test3.py          # 测试递归树状结构 (0.0 KB, 2026-03-24)
+├── mock_device/      (dir, 2026-03-24)
+│   └── templates/  (dir, 2026-03-24)
+│       └── index.html  # 这是一个模拟的变电站（Substation）监控界面。 (1.3 KB, 2026-03-24)
+├── mock_server/      (dir, 2026-03-24)
+│   └── ied_simulator.py  # data source, 作用：模拟保护继电器（IED）, 61850 接口数据上报电流值 (0.8 KB, 2026-03-24)
+├── test3.py          # 测试递归树状结构 (0.0 KB, 2026-03-24)
+├── tests/            (dir, 2026-03-24)
+│   └── test_consistency.py  # 测试脚本：Data Reconciliation - 数据对账/一致性校验。 (1.6 KB, 2026-03-24)
+└── utils/            (dir, 2026-03-24)
+    └── ai_engine.py  # RCA (Root Cause Analysis) - 根本原因分析。当 UI 和协议数据对不上时，调用 OpenAI/Claude 接口进行错误诊断 (1.0 KB, 2026-03-24)
 ```
 
 </details>
 <!-- TREE_END -->
 
 
+
 ---
 
 ## 学习步骤
 ### 1. promt
-* 准备一个施耐德自动化测试项目，目的是看到测试设备通过接口传输到web的数据，并且用ai分析报错。要求：全部用python语言，调用61850接口，需要使用到playwright，需要使用ai，自动化测试。从零开始教学，需要细节教学，有专业术语必须要解释并且双语
+* 准备一个自动化测试项目，目的是看到测试设备通过接口传输到web的数据，并且用ai分析报错。要求：全部用python语言，调用61850接口，需要使用到playwright，需要使用ai验证报错，需要有页面交互实际能看到html，多准备几个test case, 自动化测试。告诉我建立文件的步骤，项目结构，代码里注释尽可能多一点，最好每一个行为都要有注释。从零开始细节教学，如果有专业术语必须要解释并且双语。
 ### 2. 安装依赖
 * 由于 iec61850-client 在 Windows/Python 环境下安装极易出错（涉及 C 编译），我们在教学中采用 Scapy 库来模拟 61850 报文，这是安全和测试领域最专业的工具。
 
