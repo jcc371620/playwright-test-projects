@@ -12,7 +12,7 @@
 
 ```text
 ├── .gitignore        # Python项目通用忽视规则 (1.0 KB, 2026-03-25)
-├── README.md         # playwright-test-projects (26.7 KB, 2026-03-25)
+├── README.md         # playwright-test-projects (26.8 KB, 2026-03-25)
 ├── allure-results/   (dir, 2026-03-25)
 │   ├── 02ec59f9-81d4-41b6-90e5-ee1d9c823e8d-container.json     (0.2 KB, 2026-03-25)
 │   ├── 03af0c97-cd82-4062-a485-0032ce09d7c6-container.json     (0.4 KB, 2026-03-25)
@@ -249,13 +249,14 @@
 │   ├── report_20260325_004710.html                 (120.1 KB, 2026-03-25)
 │   ├── summary_20260325_004710.xlsx                (5.7 KB, 2026-03-25)
 │   └── 硬件监控测试报告_20260325_003851.html               (123.1 KB, 2026-03-25)
-├── run.py            # 项目运行入口 (4.9 KB, 2026-03-25)
+├── run.py            # run.py (4.9 KB, 2026-03-25)
 └── tests/            (dir, 2026-03-25)
-    └── test_hardware_to_web.py  # 测试脚本 (3.7 KB, 2026-03-25)
+    └── test_hardware_to_web.py  # test_hardware_to_web.py (3.8 KB, 2026-03-25)
 ```
 
 </details>
 <!-- TREE_END -->
+
 
 
 
