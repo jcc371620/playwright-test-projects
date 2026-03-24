@@ -53,6 +53,8 @@ pip install scapy
 
 # 安装 Playwright 自动化框架
 pip install playwright
+
+#pyminimms 是一个常用的 Python 61850/MMS 库；openai 用于 AI 分析。
 playwright install chromium
 
 # 安装 OpenAI SDK 用于 AI 分析
@@ -60,12 +62,11 @@ pip install openai
 
 # 安装 Flask 用于模拟 Web 后台接口
 pip install flask
-```
-``` 
+
 pip install scapy playwright pytest pytest-playwright python-dotenv openai
 
-# playwright install chromium
-pyminimms 是一个常用的 Python 61850/MMS 库；openai 用于 AI 分析。
+pip3 install pytest-html
+
 ```
 
 ---
