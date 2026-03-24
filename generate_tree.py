@@ -164,7 +164,7 @@ def update_readme(tree_text):
 
     new_block = f"""{start}
 <details>
-<summary>📂 Project Structure（点击展开）</summary>
+<summary>📂 Project Structure</summary>
 
 ```text
 {tree_text}```

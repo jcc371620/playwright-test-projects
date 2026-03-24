@@ -1,3 +1,5 @@
+#Python项目通用忽视规则
+
 # --- Python 虚拟环境 (Virtual Environment) ---
 # 绝不上传 venv 文件夹，因为它是本地生成的，且体积巨大
 venv/

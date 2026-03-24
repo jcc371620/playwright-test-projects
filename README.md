@@ -8,15 +8,15 @@
 
 <!-- TREE_START -->
 <details>
-<summary>📂 Project Structure（点击展开）</summary>
+<summary>📂 Project Structure</summary>
 
 ```text
-├── .gitignore        # --- Python 虚拟环境 (Virtual Environment) --- (0.9 KB, 2026-03-24)
-├── README.md         # playwright-test-projects (6.9 KB, 2026-03-24)
+├── .gitignore        # Python项目通用忽视规则 (1.0 KB, 2026-03-25)
+├── README.md         # playwright-test-projects (6.2 KB, 2026-03-25)
 ├── conftest.py       # Pytest 全局配置文件及 Fixtures (2.0 KB, 2026-03-25)
 ├── data/             (dir, 2026-03-24)
 │   └── test_cases.py  # data/test_cases.py (3.0 KB, 2026-03-24)
-├── generate_tree.py  # 每次 git commit 自动更新 README (6.1 KB, 2026-03-25)
+├── generate_tree.py  # 每次 git commit 自动更新 README (6.0 KB, 2026-03-25)
 ├── lib/              (dir, 2026-03-24)
 │   ├── ai_analyzer.py      # AI 分析器模块 (4.1 KB, 2026-03-25)
 │   └── iec61850_client.py  # IEC 61850 客户端模块 (4.8 KB, 2026-03-25)
@@ -27,6 +27,7 @@
 
 </details>
 <!-- TREE_END -->
+
 
 
 
