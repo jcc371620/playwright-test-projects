@@ -1,4 +1,5 @@
-# Pytest 全局配置文件及 Fixtures，专门负责在测试失败时，自动捕获网页截图并将其嵌入到 HTML 报告中。
+# Pytest 全局配置文件及 Fixtures
+# 专门负责在测试失败时，自动捕获网页截图并将其嵌入到 HTML 报告中。
 
 import pytest
 from datetime import datetime

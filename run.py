@@ -1,4 +1,5 @@
-# 项目运行入口，负责启动 Playwright 自动化测试并生成精美报告
+# 项目运行入口
+# 负责启动 Playwright 自动化测试并生成精美报告
 
 import pytest
 import os

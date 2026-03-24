@@ -12,21 +12,22 @@
 
 ```text
 ├── .gitignore        # --- Python 虚拟环境 (Virtual Environment) --- (0.9 KB, 2026-03-24)
-├── README.md         # playwright-test-projects (491.7 KB, 2026-03-24)
-├── conftest.py       # Pytest 全局配置文件及 Fixtures，专门负责在测试失败时，自动捕获网页截图并将其嵌入到 HTML 报告中。 (2.0 KB, 2026-03-24)
+├── README.md         # playwright-test-projects (6.9 KB, 2026-03-24)
+├── conftest.py       # Pytest 全局配置文件及 Fixtures (2.0 KB, 2026-03-25)
 ├── data/             (dir, 2026-03-24)
 │   └── test_cases.py  # data/test_cases.py (3.0 KB, 2026-03-24)
-├── generate_tree.py  # 每次 git commit 自动更新 README. (6.1 KB, 2026-03-24)
+├── generate_tree.py  # 每次 git commit 自动更新 README (6.1 KB, 2026-03-25)
 ├── lib/              (dir, 2026-03-24)
-│   ├── ai_analyzer.py      # AI 分析器模块，这个模块的作用是当测试发生断言失败（比如网页数值和硬件数值对不上）或系统报错时，自动抓取当前的上下文信息（Context），通过 OpenAI 的 API 进行深度分析，并返回一个人类可读的诊断报告。 (4.1 KB, 2026-03-24)
-│   └── iec61850_client.py  # IEC 61850 客户端模块，由于真实的 61850 协议非常复杂，我们使用 Scapy 来模拟一个“伪造”的 61850 MMS 报文。这样你在没有真实硬件的情况下，也能模拟出数据抓取的过程。 (4.8 KB, 2026-03-24)
-├── run.py            # 项目运行入口，负责启动 Playwright 自动化测试并生成精美报告 (2.3 KB, 2026-03-24)
+│   ├── ai_analyzer.py      # AI 分析器模块 (4.1 KB, 2026-03-25)
+│   └── iec61850_client.py  # IEC 61850 客户端模块 (4.8 KB, 2026-03-25)
+├── run.py            # 项目运行入口 (2.3 KB, 2026-03-25)
 └── tests/            (dir, 2026-03-24)
-    └── test_hardware_to_web.py  # 测试脚本：定义 20 个测试用例的循环执行逻辑。包含硬件读取、网页交互、数据比对以及 AI 报错分析。 (4.1 KB, 2026-03-24)
+    └── test_hardware_to_web.py  # 测试脚本 (4.1 KB, 2026-03-25)
 ```
 
 </details>
 <!-- TREE_END -->
+
 
 
 
