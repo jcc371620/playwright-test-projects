@@ -120,12 +120,22 @@ def update_readme(tree_text):
     else:
         content = ""
 
-    new_block = f"{start}\n```\n{tree_text}```\n{end}"
+    new_block = f"""{start}
+<details>
+<summary>📂 Project Structure（点击展开）</summary>
 
+```text
+{tree_text}```
+
+</details>
+{end}
+"""
+
+    import re
     if start in content and end in content:
         content = re.sub(f"{start}.*?{end}", new_block, content, flags=re.S)
     else:
-        content += "\n## Project Structure\n\n" + new_block
+        content += "\n## 📂 Project Structure\n\n" + new_block
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
