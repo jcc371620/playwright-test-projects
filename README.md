@@ -12,21 +12,79 @@
 
 ```text
 ├── .gitignore        # Python项目通用忽视规则 (1.0 KB, 2026-03-25)
-├── README.md         # playwright-test-projects (6.2 KB, 2026-03-25)
+├── README.md         # playwright-test-projects (11.0 KB, 2026-03-25)
+├── allure-results/   (dir, 2026-03-25)
+│   ├── 00f70011-7af3-42c4-ad7b-e64595fea835-result.json     (5.5 KB, 2026-03-25)
+│   ├── 0e3a124c-f4c5-4263-ba40-0a7553404707-result.json     (5.5 KB, 2026-03-25)
+│   ├── 151ab4af-1b19-4ef9-b2aa-753ac05badae-result.json     (5.5 KB, 2026-03-25)
+│   ├── 26015d3c-8aa8-46f5-b2de-a15f189ddfc8-container.json  (1.0 KB, 2026-03-25)
+│   ├── 26b45482-14d5-4ed1-b779-757138b59225-container.json  (1.0 KB, 2026-03-25)
+│   ├── 2b3ffb28-126f-451e-8ced-7a306b63a719-result.json     (5.5 KB, 2026-03-25)
+│   ├── 30ece776-8eaf-4b2b-b7fa-177cf16eb23b-container.json  (1.0 KB, 2026-03-25)
+│   ├── 31c427ab-5036-4fe5-9cf3-aa32a279735b-result.json     (5.5 KB, 2026-03-25)
+│   ├── 382d60f5-1d9e-42c5-826b-31153f89f7dd-result.json     (5.5 KB, 2026-03-25)
+│   ├── 3c485231-c191-4363-b9ce-159292917155-result.json     (5.5 KB, 2026-03-25)
+│   ├── 4161ac9c-e3bb-4015-ac8f-7c67f5377468-result.json     (5.5 KB, 2026-03-25)
+│   ├── 43de6a46-45bb-4b85-9b12-862f19eede54-container.json  (0.2 KB, 2026-03-25)
+│   ├── 4a8f6b59-edce-40ba-aedc-f0e0140394e2-container.json  (1.0 KB, 2026-03-25)
+│   ├── 560ac27b-edcc-4974-bb8b-f17771cea6a8-container.json  (1.0 KB, 2026-03-25)
+│   ├── 5ab7d9c5-6127-4d9b-9982-1401a0e205f7-container.json  (5.8 KB, 2026-03-25)
+│   ├── 6b0d24ad-8767-4d2e-8f7b-072b2d6f33c1-result.json     (5.5 KB, 2026-03-25)
+│   ├── 6da673e9-d949-491e-8206-5cfd99069857-result.json     (5.5 KB, 2026-03-25)
+│   ├── 6e8448ae-7f54-4e70-b9d5-0b122fb6a10c-result.json     (5.5 KB, 2026-03-25)
+│   ├── 788c54eb-14ce-4836-add3-0233d6aba168-result.json     (5.5 KB, 2026-03-25)
+│   ├── 7c70acb2-fce4-46de-baa4-61b7baf9ae3c-result.json     (5.5 KB, 2026-03-25)
+│   ├── 86d1a4ea-5384-4ca9-847c-b0777fa3027e-result.json     (5.5 KB, 2026-03-25)
+│   ├── 98bd553a-bf38-412f-a9f0-5018029266a8-container.json  (1.0 KB, 2026-03-25)
+│   ├── 9c0c9f4d-7980-46a4-9a66-d4aba8ecaf95-result.json     (5.5 KB, 2026-03-25)
+│   ├── a39d2a29-ce62-4582-b00a-82850b06a55d-result.json     (5.5 KB, 2026-03-25)
+│   ├── b0ebf0f2-6345-4fd6-83a0-2071cc82a2aa-container.json  (1.0 KB, 2026-03-25)
+│   ├── d8104905-401f-47ff-9231-a92dd985ed95-container.json  (1.1 KB, 2026-03-25)
+│   ├── d83e88de-ecbd-4687-a168-58b407d29a96-result.json     (5.5 KB, 2026-03-25)
+│   ├── df8fb4bc-b024-439f-8725-b6234a9bc09b-container.json  (1.0 KB, 2026-03-25)
+│   ├── edce175f-6e44-4265-873a-1558de02301e-result.json     (5.5 KB, 2026-03-25)
+│   ├── fb21616f-e6cb-4b61-87aa-2a1cde40f4a5-result.json     (5.5 KB, 2026-03-25)
+│   └── fe676af1-5e9d-49ad-a3c3-7c97d818f388-result.json     (5.5 KB, 2026-03-25)
 ├── conftest.py       # Pytest 全局配置文件及 Fixtures (2.0 KB, 2026-03-25)
-├── data/             (dir, 2026-03-24)
-│   └── test_cases.py  # data/test_cases.py (3.0 KB, 2026-03-24)
+├── data/             (dir, 2026-03-25)
+│   └── test_cases.py  # data/test_cases.py (8.1 KB, 2026-03-25)
 ├── generate_tree.py  # 每次 git commit 自动更新 README (6.0 KB, 2026-03-25)
-├── lib/              (dir, 2026-03-24)
+├── lib/              (dir, 2026-03-25)
 │   ├── ai_analyzer.py      # AI 分析器模块 (4.1 KB, 2026-03-25)
 │   └── iec61850_client.py  # IEC 61850 客户端模块 (4.8 KB, 2026-03-25)
-├── run.py            # 项目运行入口 (2.3 KB, 2026-03-25)
-└── tests/            (dir, 2026-03-24)
-    └── test_hardware_to_web.py  # 测试脚本 (4.1 KB, 2026-03-25)
+├── reports/          (dir, 2026-03-25)
+│   ├── Execution_Summary_20260325_011944.html      (120.1 KB, 2026-03-25)
+│   ├── QA_Integration_Report_20260325_012715.xlsx  (7.1 KB, 2026-03-25)
+│   ├── QA_Integration_Report_20260325_012717.xlsx  (7.1 KB, 2026-03-25)
+│   ├── QA_Integration_Report_20260325_013012.xlsx  (7.1 KB, 2026-03-25)
+│   ├── QA_Integration_Report_20260325_015339.xlsx  (6.6 KB, 2026-03-25)
+│   ├── QA_Integration_Report_20260325_020159.xlsx  (7.4 KB, 2026-03-25)
+│   ├── QA_Integration_Report_20260325_020611.xlsx  (7.4 KB, 2026-03-25)
+│   ├── Quality_Report_20260325_011944.xlsx         (5.9 KB, 2026-03-25)
+│   ├── Technical_Evidence_20260325_012715.html     (31.0 KB, 2026-03-25)
+│   ├── Technical_Evidence_20260325_012717.html     (120.1 KB, 2026-03-25)
+│   ├── Technical_Evidence_20260325_013012.html     (119.7 KB, 2026-03-25)
+│   ├── Technical_Evidence_20260325_015339.html     (119.3 KB, 2026-03-25)
+│   ├── Technical_Evidence_20260325_020159.html     (119.3 KB, 2026-03-25)
+│   ├── Technical_Evidence_20260325_020611.html     (119.3 KB, 2026-03-25)
+│   ├── Technical_Log_20260325_014556.html          (118.6 KB, 2026-03-25)
+│   ├── Technical_Log_20260325_014614.html          (118.6 KB, 2026-03-25)
+│   ├── Technical_Log_20260325_014824.html          (118.6 KB, 2026-03-25)
+│   ├── Technical_Log_20260325_014842.html          (118.6 KB, 2026-03-25)
+│   ├── Technical_Log_20260325_015209.html          (118.8 KB, 2026-03-25)
+│   ├── report_20260325_004710.html                 (120.1 KB, 2026-03-25)
+│   ├── summary_20260325_004710.xlsx                (5.7 KB, 2026-03-25)
+│   └── 硬件监控测试报告_20260325_003851.html               (123.1 KB, 2026-03-25)
+├── run.py            # 项目运行入口 (4.9 KB, 2026-03-25)
+└── tests/            (dir, 2026-03-25)
+    └── test_hardware_to_web.py  # 测试脚本 (3.7 KB, 2026-03-25)
 ```
 
 </details>
 <!-- TREE_END -->
+
+
+
 
 
 
@@ -49,6 +107,7 @@
 * source venv/bin/activate // 行完这个，你会发现终端提示符前面多了个 (venv) 字样，说明你已经进入了“样板间”。
 
 ### 3. 安装依赖
+* python generate_tree.py --install
 * 由于 iec61850-client 在 Windows/Python 环境下安装极易出错（涉及 C 编译），我们在教学中采用 Scapy 库来模拟 61850 报文，这是安全和测试领域最专业的工具。
 
 ```
@@ -68,7 +127,19 @@ pip install openai
 pip install flask
 
 pip install scapy playwright pytest pytest-playwright python-dotenv openai
+
+#生成报告
 pip3 install pytest-html
+pip install pandas openpyxl
+pip install allure-pytest
+
+#安装allure
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install allure
+allure --version
+
+#查看报告
+allure serve allure-results
 
 ```
 
