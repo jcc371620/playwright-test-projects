@@ -16,7 +16,7 @@
 # 3. type:            数据类型 (Data Category)，用于报表分类汇总（模拟量、状态量、告警等）。
 # 4. scenario:        测试场景描述 (Test Scenario)，描述该测试对业务或安全的影响，满足审计合规性。
 # 5. expected_input:  期望输入 (Expected Input)，协议层预期发送的原始指令内容（如 MMS/TCP 报文）。
-# 6. expected_result: 期望结果 (Expected Result)，UI 界面层预期的显示状态或数值描述。
+# 6. expected_output: 期望结果 (Expected Output)，UI 界面层预期的显示状态或数值描述。
 # 7. expected_min/max:数值判定区间，定义了硬件采样值映射到网页后的合法波动范围。
 # 8. expected:        状态判定标准，针对开关量 (ON/OFF) 的字符串精确匹配标准。
 # -------------------------------------------------------------------------
