@@ -1,0 +1,36 @@
+# --- Python 虚拟环境 (Virtual Environment) ---
+# 绝不上传 venv 文件夹，因为它是本地生成的，且体积巨大
+venv/
+ENV/
+env/
+
+# --- 安全与隐私 (Security & Secrets) ---
+# 核心安全：禁止上传包含 API Key (OpenAI) 和登录密码的文件
+.env
+
+# --- Playwright 特有文件 (Playwright Specifics) ---
+# 自动生成的测试报告和截图
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.local-browsers/
+
+# --- Python 编译缓存 (Python Cache) ---
+# 这些是 Python 运行产生的临时字节码文件，不需要备份
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Pytest 缓存 (Pytest Cache) ---
+# 自动化测试框架生成的运行状态记录
+.pytest_cache/
+
+# --- 操作系统临时文件 (OS Metadata) ---
+# macOS 系统自动生成的文件夹索引文件
+.DS_Store
+Thumbs.db
+
+# --- 编辑器配置 (IDE Settings) ---
+# 如果你使用 VS Code，可以忽略它的本地设置
+.vscode/
+.idea/
