@@ -1,6 +1,6 @@
 # playwright-test-projects
 
-本项目用于学习Pytest + Playwright 自动化测试
+本项目用于学习Pytest + Playwright 自动化测试, 目的是能看到模拟硬件测试设备通过61850接口传输到web的数据，如果报错的话则用ai分析报错原因并返回ai告知到结果，同时保证数据的安全性，并且可以维护测试用例。
 
 ---
 
@@ -34,7 +34,11 @@
 
 ## 学习步骤
 ### 1. promt
-* 准备一个自动化测试项目，目的是看到测试设备通过接口传输到web的数据，并且用ai分析报错。要求：全部用python语言，调用61850接口，需要使用到playwright，需要使用ai验证报错，需要有页面交互实际能看到html，多准备几个test case, 自动化测试。告诉我建立文件的步骤，项目结构，代码里注释尽可能多一点，最好每一个行为都要有注释。从零开始细节教学，如果有专业术语必须要解释并且双语。
+* 准备一个自动化测试项目，目的是希望看到硬件测试设备通过接口传输到web的数据，如果报错的话则用ai分析报错原因并返回ai告知到结果，同时保证数据的安全性。
+一共实现20个test case，case你来决定，test case可以放在单独的文件里方便维护。
+全部用python语言。
+必须调用61850接口，必须需要使用到playwright，必须能肉眼看到页面交互。
+告诉我详细的建立文件的步骤，项目结构，代码里的注释尽可能详细，最好每一个行为都要有注释，比如用了fixture就注释说一下为什么用。从零开始细节教学，如果有专业术语必须要解释并且双语。文件夹根目录为playwright-test-projects
 ### 2. 安装依赖
 * 由于 iec61850-client 在 Windows/Python 环境下安装极易出错（涉及 C 编译），我们在教学中采用 Scapy 库来模拟 61850 报文，这是安全和测试领域最专业的工具。
 
@@ -68,7 +72,8 @@ pip install flask
 * Storage State // 你可以先登录一次，将 Cookie 和 LocalStorage 保存为一个 JSON 文件。之后的几百个测试用例直接加载这个 JSON，跳过登录步骤。
 * Parallelization //Playwright 默认根据 CPU 核心数启动多个 Worker Processes (工作进程) 同时运行测试。
 
-### 2. 61850接口术语
+### 2. IEC 61850标准
+* 👉 IEC 61850 = 标准（Standard）它里面包含了协议、数据模型、通信规则等一整套规范。
 * IED (Intelligent Electronic Device): 智能电子设备（如施耐德的保护继电器）。
 * MMS (Manufacturing Message Specification): 制造报文规范（61850 传输数据的核心协议）。
 * Dataset (数据集): IED 中打包传输的一组逻辑值（如电压、电流）。
