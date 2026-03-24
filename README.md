@@ -8,8 +8,9 @@
 
 <!-- TREE_START -->
 ```
-├── README.md         # playwright-test-projects (0.7 KB, 2026-03-24)
-└── generate_tree.py  # 根据vscode项目结构，生成readme里的递归生成树状项目结构。 (4.2 KB, 2026-03-24)
+├── README.md         # playwright-test-projects (0.8 KB, 2026-03-24)
+├── generate_tree.py  # 根据vscode项目结构，生成readme里的递归生成树状项目结构。 (4.2 KB, 2026-03-24)
+└── test.py           # 测试递归树状结构 (0.0 KB, 2026-03-24)
 ```
 <!-- TREE_END -->
 
@@ -24,7 +25,11 @@
 ### 2. 
 
 ## 报错与解决方法
-### 1. Commit后，在sync的时候报错：
-2026-03-24 17:12:35.898 [info] fatal: unable to access 'https://github.com/jcc371620/playwright-test-projects.git/': Recv failure: Connection was reset
+### 1. 在sync的时候有弹窗报错：
 * 归因：vpn不稳定导致
-* 解决方法：等待后重试
+* 解决步骤：
+    1. 报错弹窗
+    2. Show Command Output查看报错信息
+    3. > git pull --tags origin main
+fatal: unable to access 'https://github.com/jcc371620/playwright-test-projects.git/': Failed to connect to github.com port 443 after 21054 ms: Could not connect to server
+    4. gemini分析

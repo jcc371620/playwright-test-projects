@@ -125,7 +125,7 @@ def update_readme(tree_text):
     if start in content and end in content:
         content = re.sub(f"{start}.*?{end}", new_block, content, flags=re.S)
     else:
-        content += "\n## 📂 Project Structure\n\n" + new_block
+        content += "\n## Project Structure\n\n" + new_block
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
