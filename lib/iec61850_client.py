@@ -3,26 +3,23 @@
 """
 技术重点解释
 Scapy 的作用：在代码的 _模拟发送61850报文 中，我们使用了 IP() / TCP() / Raw()。这在网络安全测试和工业协议仿真中非常常见。它允许你跳过标准的 Socket 库，直接控制每一个数据包的层级。
-
-异常触发逻辑：我在代码里加了一个 random.random() < 0.05。这意味着平均每跑 20 个用例（正好是你的一组用例数量），就可能会出现一次随机失败。
-
-这非常重要！ 只有这样，你运行 run.py 时，才能看到 Playwright 截取失败图片，并看到 AI 介入分析报错原因的整个闭环流程。
-
+异常触发逻辑：在代码里加了一个 random.random() < 0.05。这意味着平均每跑 20 个用例（正好是一组用例数量），就可能会出现一次随机失败。
+只有这样，运行 run.py 时，才能看到 Playwright 截取失败图片，并看到 AI 介入分析报错原因的整个闭环流程。
 数据安全性：所有的操作都基于 self.硬件ip。在真实环境中，如果你的测试机器没有连接到真实的 61850 控制网，send() 函数会自动被操作系统的防火墙或路由协议拦截，保证了测试的物理边界安全。
 """
 
 import random
 import time
-from scapy.all import IP, TCP, Raw, send, sniff
+from scapy.all import IP, TCP, Raw, send, sniff #sacpy：网络协议构造与发送库，适合模拟各种协议的报文交互，在这里我们用它来构造模拟的 IEC 61850 MMS 报文。
 
-class IEC61850Client:
+class IEC61850Client: 
     """
     [协议客户端]
     使用 Scapy 模拟 IEC 61850 MMS 协议的数据交互。
     该类负责向硬件发送请求并解析返回的报文。
     """
 
-    def __init__(self, 硬件ip):
+    def __init__(self, 硬件ip): # 初始化客户端，接受目标 IED 的 IP 地址
         """
         [初始化]
         :param 硬件ip: 目标 IED (智能电子设备) 的 IP 地址

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Power System Dashboard</title>
+    <title>MNC Power System Dashboard</title>
     <style>
-        .card { border: 1px solid #ccc; padding: 20px; width: 200px; margin: 10px; display: inline-block; }
-        .value { font-size: 24px; color: #2f5597; font-weight: bold; }
+        body { font-family: Arial; background: #1a1a1a; color: #00ff00; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .card { border: 1px solid #333; padding: 15px; border-radius: 8px; background: #252525; }
+        .value { font-size: 24px; font-weight: bold; color: #fff; }
     </style>
 </head>
 <body>
-    <h1>MNC Power Plant Real-time Monitor</h1>
-    <div class="card">
-        <div>A-Phase Voltage</div>
-        <div id="MET_L1_Volt" class="value">219.5V</div>
-    </div>
-    <div class="card">
-        <div>Breaker Status</div>
-        <div id="POS_CB_01" class="value">ON</div>
+    <h1>⚡ 电力实时监控系统 (模拟)</h1>
+    <div class="grid" id="dashboard">
+        <div class="card">A相电压: <span id="MET_L1_Volt" class="value">220.5</span> V</div>
+        <div class="card">1号断路器: <span id="POS_CB_01" class="value">ON</span></div>
+        <div class="card">环境温度: <span id="MET_TEMP" class="value">25.3</span> ℃</div>
     </div>
 </body>
 </html>
