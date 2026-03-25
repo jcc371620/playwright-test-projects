@@ -17,6 +17,7 @@ env/
 /blob-report/
 /playwright/.local-browsers/
 allure-results/
+reports/
 
 # --- Python 编译缓存 (Python Cache) ---
 # 这些是 Python 运行产生的临时字节码文件，不需要备份

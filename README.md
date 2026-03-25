@@ -12,7 +12,7 @@
 
 ```text
 ├── .gitignore        # Python项目通用忽视规则 (1.0 KB, 2026-03-25)
-├── README.md         # playwright-test-projects (27.4 KB, 2026-03-25)
+├── README.md         # playwright-test-projects (9.6 KB, 2026-03-25)
 ├── conftest.py       # Pytest 全局配置文件及 Fixtures (2.0 KB, 2026-03-25)
 ├── data/             (dir, 2026-03-25)
 │   └── test_cases.py  # data/test_cases.py (8.1 KB, 2026-03-25)
@@ -22,45 +22,6 @@
 │   └── iec61850_client.py  # IEC 61850 客户端模块 (4.8 KB, 2026-03-25)
 ├── mock_site/        (dir, 2026-03-25)
 │   └── index.html  (0.6 KB, 2026-03-25)
-├── reports/          (dir, 2026-03-25)
-│   ├── Execution_Summary_20260325_011944.html      (120.1 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_012715.xlsx  (7.1 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_012717.xlsx  (7.1 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_013012.xlsx  (7.1 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_015339.xlsx  (6.6 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_020159.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_020611.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_022508.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_022809.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_023112.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_023344.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_024102.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_025135.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_025829.xlsx  (7.4 KB, 2026-03-25)
-│   ├── QA_Integration_Report_20260325_151628.xlsx  (7.4 KB, 2026-03-25)
-│   ├── Quality_Report_20260325_011944.xlsx         (5.9 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_012715.html     (31.0 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_012717.html     (120.1 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_013012.html     (119.7 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_015339.html     (119.3 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_020159.html     (119.3 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_020611.html     (119.3 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_022508.html     (119.3 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_022809.html     (119.3 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_023112.html     (119.3 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_023344.html     (980.6 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_024102.html     (980.6 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_025135.html     (980.6 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_025829.html     (127.3 KB, 2026-03-25)
-│   ├── Technical_Evidence_20260325_151628.html     (980.6 KB, 2026-03-25)
-│   ├── Technical_Log_20260325_014556.html          (118.6 KB, 2026-03-25)
-│   ├── Technical_Log_20260325_014614.html          (118.6 KB, 2026-03-25)
-│   ├── Technical_Log_20260325_014824.html          (118.6 KB, 2026-03-25)
-│   ├── Technical_Log_20260325_014842.html          (118.6 KB, 2026-03-25)
-│   ├── Technical_Log_20260325_015209.html          (118.8 KB, 2026-03-25)
-│   ├── report_20260325_004710.html                 (120.1 KB, 2026-03-25)
-│   ├── summary_20260325_004710.xlsx                (5.7 KB, 2026-03-25)
-│   └── 硬件监控测试报告_20260325_003851.html               (123.1 KB, 2026-03-25)
 ├── run.py            # run.py (4.9 KB, 2026-03-25)
 └── tests/            (dir, 2026-03-25)
     └── test_hardware_to_web.py  # test_hardware_to_web.py (3.8 KB, 2026-03-25)
@@ -68,6 +29,7 @@
 
 </details>
 <!-- TREE_END -->
+
 
 
 
