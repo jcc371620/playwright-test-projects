@@ -18,7 +18,7 @@
 │   └── test_cases.py  # data/test_cases.py (8.1 KB, 2026-03-25)
 ├── generate_tree.py  # 每次 git commit 自动更新 README (6.0 KB, 2026-03-25)
 ├── lib/              (dir, 2026-03-25)
-│   ├── ai_analyzer.py      # AI 分析器模块 (4.1 KB, 2026-03-25)
+│   ├── ai_analyzer.py      # AI 分析器模块，这个模块的作用是当测试发生断言失败（比如网页数值和硬件数值对不上）或系统报错时，自动抓取当前的上下文信息（Context），通过 OpenAI 的 API 进行深度分析，并返回一个人类可读的诊断报告。 (2.9 KB, 2026-03-25)
 │   └── iec61850_client.py  # IEC 61850 客户端模块 (4.9 KB, 2026-03-25)
 ├── mock_site/        (dir, 2026-03-25)
 │   └── index.html  (0.8 KB, 2026-03-25)
@@ -29,6 +29,7 @@
 
 </details>
 <!-- TREE_END -->
+
 
 
 
