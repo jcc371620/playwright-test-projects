@@ -21,7 +21,7 @@ class TestPowerSystemSync:
         
         try:
             # 尝试访问页面（即使地址是假的，AI 也会分析报错原因）
-            page.goto("https://your-power-system.com/dashboard", timeout=5000)
+            page.goto("/Users/jc/git/playwright-test-projects/playwright-test-projects/mock_site/index.html", timeout=5000)
             
             # 抓取数据
             element = page.locator(f"#{case['point']}")

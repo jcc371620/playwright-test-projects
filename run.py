@@ -10,9 +10,8 @@ from openpyxl import load_workbook
 from openpyxl.styles import PatternFill, Alignment, Font
 from data.test_cases import TEST_CASES
 
-# ==========================================
+
 # 1. Excel 样式美化逻辑 (Excel Stylist)
-# ==========================================
 
 def finalize_excel_report(path, data):
     """
@@ -66,11 +65,10 @@ def finalize_excel_report(path, data):
 
     wb.save(path)
 
-# ==========================================
-# 2. 自动化执行主引擎 (Execution Engine)
-# ==========================================
 
-def run_integration_test():
+# 2. 自动化执行主引擎 (Execution Engine)
+
+def run_integration_test(): # 负责执行 Pytest 测试并生成报告
     # 路径初始化
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     execution_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -79,8 +77,8 @@ def run_integration_test():
     
     if not os.path.exists(report_dir): os.makedirs(report_dir)
 
-    excel_path = f"{report_dir}/QA_Integration_Report_{timestamp}.xlsx"
-    html_path = f"{report_dir}/Technical_Evidence_{timestamp}.html"
+    excel_path = f"{report_dir}/QA_Integration_Report_{timestamp}.xlsx" # excel管理层报表
+    html_path = f"{report_dir}/Technical_Evidence_{timestamp}.html" # html快速审计文档
 
     print(f"[{execution_date}] 系统就绪，开始执行端到端一致性校验...")
 

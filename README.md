@@ -12,8 +12,8 @@
 
 ```text
 ├── .gitignore        # Python项目通用忽视规则 (1.0 KB, 2026-03-25)
-├── README.md         # playwright-test-projects (7.8 KB, 2026-03-25)
-├── conftest.py       # Pytest 全局配置文件及 Fixtures (2.0 KB, 2026-03-25)
+├── README.md         # playwright-test-projects (8.1 KB, 2026-03-26)
+├── conftest.py       # configuration + test - Pytest 全局配置文件及 Fixtures (2.0 KB, 2026-03-26)
 ├── data/             (dir, 2026-03-25)
 │   └── test_cases.py  # data/test_cases.py (8.1 KB, 2026-03-25)
 ├── generate_tree.py  # 每次 git commit 自动更新 README (6.0 KB, 2026-03-25)
@@ -22,13 +22,14 @@
 │   └── iec61850_client.py  # IEC 61850 客户端模块 (4.9 KB, 2026-03-25)
 ├── mock_site/        (dir, 2026-03-25)
 │   └── index.html  (0.8 KB, 2026-03-25)
-├── run.py            # run.py (4.9 KB, 2026-03-25)
+├── run.py            # run.py (4.8 KB, 2026-03-26)
 └── tests/            (dir, 2026-03-25)
     └── test_hardware_to_web.py  # test_hardware_to_web.py (2.0 KB, 2026-03-25)
 ```
 
 </details>
 <!-- TREE_END -->
+
 
 
 
@@ -43,13 +44,11 @@
 必须调用61850接口，必须需要使用到playwright，必须能肉眼看到页面交互。
 告诉我详细的建立文件的步骤，项目结构，代码里的注释尽可能详细，最好每一个行为都要有注释，比如用了fixture就注释说一下为什么用。从零开始细节教学，如果有专业术语必须要解释并且双语。文件夹根目录为playwright-test-projects
 
-准备一个自动化测试项目，目的是希望看到硬件测试设备通过接口传输到web的数据，如果报错的话则用ai分析报错原因并返回ai告知到结果，同时保证数据的安全性。全部用python语言，必须调用61850接口和playwright，必须能肉眼看到页面交互，最好可以模拟一个能显示数据的界面比如模拟器。
-
+* edited: 准备一个自动化测试项目，目的是希望看到硬件测试设备通过接口传输到web的数据，如果报错的话则用ai分析报错原因并返回ai告知到结果，同时保证数据的安全性。全部用python语言，必须调用61850接口和playwright，必须能肉眼看到页面交互，最好可以模拟一个能显示数据的界面比如模拟器。
 一共实现20个test case，case你来决定，test case放在单独的文件里方便维护。需要有case number/test scenario/expected input/expec一ed output/actual input/actual output/test resultt（pass或fail）/error message等列，你也可以加上你建议的列数。
 输出excel、allure、html形式的三种测试报告，把ai分析的结果和测试截图分别放入excel/html/allure报告中。
 excel文件中，如果是fail的那就把test result注为红色，如果是pass的就标注为绿色。
 希望有些是pass有些是fail，这样我就能在allure看到颜色不一样的饼状图。
-
 告诉我详细的建立文件的步骤，项目结构，代码里的注释尽可能详细，每一个行为都要有注释，比如用了fixture，就注释说一下为什么用。从零开始细节教学，如果有专业术语必须要解释并且双语。文件夹根目录为playwright-test-projects。
 
 
